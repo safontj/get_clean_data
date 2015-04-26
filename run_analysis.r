@@ -30,8 +30,7 @@ run_analysis <- function(){
         
         mergedDataMeansStds <- mergedData[,i]
         
-        
-        
+                
         ## activities
         trainActivity <- read.table("y_train.txt")
         testActivity <- read.table("y_test.txt")
@@ -43,8 +42,7 @@ run_analysis <- function(){
         testSubject <- read.table("subject_test.txt")
         mergedSubject <- rbind(trainSubject, testSubject)
         
-        ## name activities in the data set
-       
+        
 ## 3) Uses descriptive activity names to name the activities in the data set
         activity <- read.table("activity_labels.txt")
         labelActivity<- merge(mergedActivity,activity)
@@ -61,11 +59,11 @@ run_analysis <- function(){
 ## 5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
         
         ## average of variables, grouped by activity and subject
+        
         TidyAvg <- aggregate(extendedDataSet[,3:ncol(extendedDataSet)], by=list(extendedDataSet$Activity, extendedDataSet$Subject), mean)
         colnames(TidyAvg) <- c("Activity", "Subject", as.character(features[i,2]))
         
         write.table(TidyAvg,"run_analysis.txt", row.names= FALSE)
-        
         
         
 }
