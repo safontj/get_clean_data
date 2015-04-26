@@ -19,6 +19,6 @@ The script uses the activity labels to provide a description to the data activit
 
 The names of the activities and the users IDs are used to assign users and activity descriptions to each observation set with *cbind*
 
-The script uses the added "activity" and "subject" fields to to group the information by activity and subject, using the mean. The *aggregate* function is used fot this.
+The script uses the added "activity" and "subject" fields to group the information by activity and subject, using the mean. The *aggregate* function is used fot this.
 
 Finally the new clean data set is stored in a "run_analysis.txt" file with *write.table*
